@@ -1,29 +1,31 @@
-[![Traefik Deploy](https://github.com/Geonovum/ogc-api-testbed/actions/workflows/deploy.traefik.yml/badge.svg)](https://github.com/Geonovum/ogc-api-testbed/actions/workflows/deploy.traefik.yml)
-[![pygeoapi Deploy](https://github.com/Geonovum/ogc-api-testbed/actions/workflows/deploy.pygeoapi.yml/badge.svg)](https://github.com/Geonovum/ogc-api-testbed/actions/workflows/deploy.pygeoapi.yml)
-[![ldproxy Deploy](https://github.com/Geonovum/ogc-api-testbed/actions/workflows/deploy.ldproxy.yml/badge.svg)](https://github.com/Geonovum/ogc-api-testbed/actions/workflows/deploy.ldproxy.yml)
-[![geoserver Deploy](https://github.com/Geonovum/ogc-api-testbed/actions/workflows/deploy.geoserver.yml/badge.svg)](https://github.com/Geonovum/ogc-api-testbed/actions/workflows/deploy.geoserver.yml)
-[![goaf Deploy](https://github.com/Geonovum/ogc-api-testbed/actions/workflows/deploy.goaf.yml/badge.svg)](https://github.com/Geonovum/ogc-api-testbed/actions/workflows/deploy.goaf.yml)
-[![qgis Deploy](https://github.com/Geonovum/ogc-api-testbed/actions/workflows/deploy.qgis.yml/badge.svg)](https://github.com/Geonovum/ogc-api-testbed/actions/workflows/deploy.qgis.yml)
-[![postgis Deploy](https://github.com/Geonovum/ogc-api-testbed/actions/workflows/deploy.postgis.yml/badge.svg)](https://github.com/Geonovum/ogc-api-testbed/actions/workflows/deploy.postgis.yml)
-[![admin Deploy](https://github.com/Geonovum/ogc-api-testbed/actions/workflows/deploy.admin.yml/badge.svg)](https://github.com/Geonovum/ogc-api-testbed/actions/workflows/deploy.admin.yml)
-[![home Deploy](https://github.com/Geonovum/ogc-api-testbed/actions/workflows/deploy.home.yml/badge.svg)](https://github.com/Geonovum/ogc-api-testbed/actions/workflows/deploy.home.yml)
-[![docs Deploy](https://github.com/Geonovum/ogc-api-testbed/actions/workflows/deploy.docs.yml/badge.svg)](https://github.com/Geonovum/ogc-api-testbed/actions/workflows/deploy.docs.yml)
+[![Traefik Deploy](https://github.com/justb4/ogc-api-jrc/actions/workflows/deploy.traefik.yml/badge.svg)](https://github.com/justb4/ogc-api-jrc/actions/workflows/deploy.traefik.yml)
+[![pygeoapi Deploy](https://github.com/justb4/ogc-api-jrc/actions/workflows/deploy.pygeoapi.yml/badge.svg)](https://github.com/justb4/ogc-api-jrc/actions/workflows/deploy.pygeoapi.yml)
+[![postgis Deploy](https://github.com/justb4/ogc-api-jrc/actions/workflows/deploy.postgis.yml/badge.svg)](https://github.com/justb4/ogc-api-jrc/actions/workflows/deploy.postgis.yml)
+[![admin Deploy](https://github.com/justb4/ogc-api-jrc/actions/workflows/deploy.admin.yml/badge.svg)](https://github.com/justb4/ogc-api-jrc/actions/workflows/deploy.admin.yml)
+[![home Deploy](https://github.com/justb4/ogc-api-jrc/actions/workflows/deploy.home.yml/badge.svg)](https://github.com/justb4/ogc-api-jrc/actions/workflows/deploy.home.yml)
+[![docs Deploy](https://github.com/justb4/ogc-api-jrc/actions/workflows/deploy.docs.yml/badge.svg)](https://github.com/justb4/ogc-api-jrc/actions/workflows/deploy.docs.yml)
 [![Gitter](https://img.shields.io/gitter/room/Geonovum/ogc-api-testbed.svg?style=flat-square)](https://gitter.im/Geonovum/ogc-api-testbed)
 
-# OGC API Testbed - STABLE
+# Data Services for EC JRC
+This repository contains the sources to realize data services based on OGC Web services for
+the European Commission Joint Research Centre (Ispra).
+
 Bootstrap and continuous integration/deployment (CI/CD) for OGC API web-service components.
-See the [website apitestdocs.geonovum.nl](https://apitestdocs.geonovum.nl) for documentation and details.
 
 Want to access the (OGC) web-services? Go to:
 
-* Stable (production) server at [apitestbed.geonovum.nl](https://apitestbed.geonovum.nl/) (from this repo)
-* Sandbox (experimental) server at [apisandbox.geonovum.nl](https://apisandbox.geonovum.nl/) (from [Sandbox repo](https://github.com/Geonovum/ogc-api-sandbox))
+* Stable (production) server at [jrc.map5.nl](https://jrc.map5.nl/).
+
+## Credits
+This repo is generated from the [Template GitHub repo from Geonovum](https://github.com/Geonovum/ogc-api-testbed) 
+that was developed for their OGC API Testbed.
+
+See the [website apitestdocs.geonovum.nl](https://apitestdocs.geonovum.nl) for documentation and details.
 
 ## Summary
 
 This repo contains all that is needed to bootstrap, configure and maintain (CI/CD) a remote
-deployment of an OGC API web-service stack using modern "DevOps" tooling. You can use it as a [GitHub Template](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/creating-a-repository-on-github/creating-a-repository-from-a-template)
-to configure and run your own instance. See for example the [OGC API Sandbox repo](https://github.com/Geonovum/ogc-api-sandbox).
+deployment of an OGC API web-service stack using modern "DevOps" tooling. 
 
 The main design principles are:
 
@@ -57,10 +59,6 @@ The operational stack has the following components:
 
 * [Traefik](https://traefik.io/) a frontend proxy/load-balancer and SSL (HTTPS) endpoint.
 * [pygeoapi](https://pygeoapi.io/) a Python server implementation of the OGC API suite of standards.
-* [GeoServer](http://geoserver.org/) a Java server implementation of the OGC API suite of standards.
-* [ldproxy](https://interactive-instruments.github.io/ldproxy/) a Java server implementation of the OGC API suite of standards.
-* [QGIS Server](https://www.qgis.org/) - server component of QGIS with OGC OAFeat support.
-* [GOAF](https://github.com/PDOK/goaf) - OGC OAFeat implementation in Golang.
 * [PostgreSQL/PostGIS](https://postgis.net) - geospatial database
 
 For administration, documentation and monitoring the following components are used:
@@ -70,4 +68,4 @@ For administration, documentation and monitoring the following components are us
 * [GeoHealthCheck](https://geohealthcheck.org) to monitor the availability, compliance and QoS of OGC web services
 * [Portainer](https://www.portainer.io/) visual Docker monitor and manager
 
-Read more on the setup in the [documentation/website of this project](https://apitestdocs.geonovum.nl/setup).
+Read more on the setup in the [documentation/website of the Geonovum project](https://apitestdocs.geonovum.nl/setup).

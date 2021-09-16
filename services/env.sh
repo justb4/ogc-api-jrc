@@ -8,7 +8,7 @@
 export DEPLOY_ENV="local"
 export TRAEFIK_DOMAIN="localhost"
 export TRAEFIK_SSL_ENDPOINT=
-export TRAEFIK_SSL_DOMAIN="apitestbed.geonovum.nl"
+export TRAEFIK_SSL_DOMAIN="jrc.map5.nl"
 export TRAEFIK_SSL_CERT_RESOLVER=
 export TRAEFIK_USE_TLS="false"
 export HOST_UID=$(id -u)
@@ -20,13 +20,7 @@ case "${HOSTNAME}" in
     "OGCAPIP")
         DEPLOY_ENV="prod"
         ;;
-    "apitestbed.geonovum.nl")
-        DEPLOY_ENV="prod"
-        ;;
-    "apitestbed")
-        DEPLOY_ENV="prod"
-        ;;
-    "vps11118.alm01.cloud")
+    "jrc.map5.nl")
         DEPLOY_ENV="prod"
         ;;
     *)
