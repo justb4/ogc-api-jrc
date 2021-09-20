@@ -95,15 +95,16 @@ The hostname is crucial to services functioning. Two steps:
 * set content of `git/ansible/hosts/prod.yml` (Inventory) to
 
 ```
-ogcapi:
+ogcapijrc:
   hosts:
-    apisandbox:
+    OGCAPIJRC:
        ansible_port: 22
        ansible_host: jrc.map5.nl
        ansible_user: root
-
+       ansible_python_interpreter: /usr/bin/python3
 ```
 
+* note: `OGCAPIJRC` will also be the new hostname, and prompt name 
 * set content of `git/services/env.sh` (common environment Docker-based services) to:
 
 ```
