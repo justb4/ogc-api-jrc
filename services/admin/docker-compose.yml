@@ -83,11 +83,11 @@ services:
     expose:
       - "9000"
 
-    ports:
-      - "9001:9000"
+#    ports:
+#      - "9001:9000"
 
     command:
-      - --admin-password=$$2y$$05$$VCjhk4z8mhi8V0DpXHX56.W1jy0sNWHOwSQbXVCYPyLs/WanBODPq
+      - --admin-password=$2y$05$eR96yoZOlqYbEaW83jCRxedokYCrTBAUf0Ils47H/zZb.RCEiiTLC
 
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock

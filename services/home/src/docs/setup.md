@@ -311,6 +311,7 @@ These are typical issues found and resolved:
 * make sure the `gh-key.rsa.pub` is present in both `/root` and `/home/<admin user>` `.ssh/authorized_keys`
 * need to set: `ansible_python_interpreter: /usr/bin/python3` in `git/ansible/hosts/prod.yml`
 * `/home/<admin user>/git` is owned by root on bootstrap, `sudo chmod -R  <admin user>:<admin user /home/<admin user>/git` 
+* `postgis + pgadmin`: needed to manually `stop.sh`, remove all volumes and `start.sh` otherwise could not login on pgadmin nor postgis from there  
 
 ## 9. Enable GitHub Workflows
 
