@@ -283,9 +283,9 @@ Add/commit/push all your above changes to the GitHub repo.
 
 ## 7 Bootstrap/provision Server
 
-Moment of truth! Bootstrap (provision the server) in single playbook.
+Moment of truth! Bootstrap (provision the server) in single playbook. Save the logfile for analysis.
 
-* `ansible-playbook -v --vault-password-file ~/.ssh/ansible-vault/ogc-api-sandbox.txt bootstrap.yml -i hosts/prod.yml`
+* `ansible-playbook -v --vault-password-file ~/.ssh/ansible-vault/ogc-api-jrc.txt bootstrap.yml -i hosts/prod.yml > bootstrap.log 2>&1`
 
 If all goes well, this output should be shown at end:
 
@@ -306,9 +306,8 @@ Check with portainer [https://jrc.map5.nl/portainer/](https://jrc.map5.nl/portai
 
 These are typical issues found and resolved:
 
-* `/home/oadmin/git` is owned by root, change to `oadmin` 
-* delete (or change) CNAME `git/docs/docs`
-* permissions in services/qgis/data , make datadir writeable for all: `chmod 777 services/qgis/data`
+* need to set: `ansible_python_interpreter: /usr/bin/python3` in `git/ansible/hosts/prod.yml`
+* `/home/<admin user>/git` is owned by root, change to `<admin user>` 
 
 ## 9. Enable GitHub Workflows
 
