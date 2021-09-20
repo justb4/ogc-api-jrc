@@ -168,6 +168,8 @@ cat ~/.ssh/id_rsa.pub >> authorized_keys
 cat id.rsa.pub.of.joe >> authorized_keys   # etc
 
 ```
+    
+Set these for the `root` and `<admin user>` in their `.ssh/authorized_keys`.
 
 ### Adapt vars.yml
 
@@ -306,8 +308,9 @@ Check with portainer [https://jrc.map5.nl/portainer/](https://jrc.map5.nl/portai
 
 These are typical issues found and resolved:
 
+* make sure the `gh-key.rsa.pub` is present in both `/root` and `/home/<admin user>` `.ssh/authorized_keys`
 * need to set: `ansible_python_interpreter: /usr/bin/python3` in `git/ansible/hosts/prod.yml`
-* `/home/<admin user>/git` is owned by root, change to `<admin user>` 
+* `/home/<admin user>/git` is owned by root on bootstrap, `sudo chmod -R  <admin user>:<admin user /home/<admin user>/git` 
 
 ## 9. Enable GitHub Workflows
 
