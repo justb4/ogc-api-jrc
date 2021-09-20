@@ -34,17 +34,12 @@ ansible-galaxy install --roles-path ./roles -r requirements.yml
 
 ## Bootstrap
 
-### Pre on server
-
-* create Hetzner VM server, server name `OGCAPI-1`
-* add firewall "web"  
-* paste your SSH public key (no password access)
 
 ### Ansible
 ```
 
 # Installs entire system PROD
-ansible-playbook -v --vault-password-file ~/.ssh/ansible-vault/ogc-api-testbed.txt bootstrap.yml -i hosts/prod.yml
+ansible-playbook -v --vault-password-file ~/.ssh/ansible-vault/ogc-api-jrc.txt bootstrap.yml -i hosts/prod.yml
 
 ```
 
@@ -58,7 +53,7 @@ ansible-playbook -v --vault-password-file ~/.ssh/ansible-vault/ogc-api-testbed.t
 Basic sanity test:
 
 ```
-ansible-playbook -v --vault-password-file ~/.ssh/ansible-vault/ogc-api-testbed.txt test.yml -i hosts/prod.yml
+ansible-playbook -v --vault-password-file ~/.ssh/ansible-vault/ogc-api-jrc.txt test.yml -i hosts/prod.yml
 
 
 ```
@@ -68,13 +63,13 @@ ansible-playbook -v --vault-password-file ~/.ssh/ansible-vault/ogc-api-testbed.t
 Deploy individual services:
 
 ```
-ansible-playbook -v --vault-password-file ~/.ssh/ansible-vault/ogc-api-testbed.txt deploy.yml -i hosts/prod.yml --tags traefik
+ansible-playbook -v --vault-password-file ~/.ssh/ansible-vault/ogc-api-jrc.txt deploy.yml -i hosts/prod.yml --tags traefik
 
-ansible-playbook -v --vault-password-file ~/.ssh/ansible-vault/ogc-api-testbed.txt deploy.yml -i hosts/prod.yml --tags pygeoapi
+ansible-playbook -v --vault-password-file ~/.ssh/ansible-vault/ogc-api-jrc.txt deploy.yml -i hosts/prod.yml --tags pygeoapi
 
-ansible-playbook -v --vault-password-file ~/.ssh/ansible-vault/ogc-api-testbed.txt deploy.yml -i hosts/prod.yml --tags postgis
+ansible-playbook -v --vault-password-file ~/.ssh/ansible-vault/ogc-api-jrc.txt deploy.yml -i hosts/prod.yml --tags postgis
 
-ansible-playbook -v --vault-password-file ~/.ssh/ansible-vault/ogc-api-testbed.txt deploy.yml -i hosts/prod.yml --tags admin
+ansible-playbook -v --vault-password-file ~/.ssh/ansible-vault/ogc-api-jrc.txt deploy.yml -i hosts/prod.yml --tags admin
 
 ```
 
@@ -83,11 +78,11 @@ ansible-playbook -v --vault-password-file ~/.ssh/ansible-vault/ogc-api-testbed.t
 Manage ogcapi `systemd` service:
 
 ```
-ansible-playbook -v --vault-password-file ~/.ssh/ansible-vault/ogc-api-testbed.txt service.yml -i hosts/prod.yml --tags status
+ansible-playbook -v --vault-password-file ~/.ssh/ansible-vault/ogc-api-jrc.txt service.yml -i hosts/prod.yml --tags status
 
-ansible-playbook -v --vault-password-file ~/.ssh/ansible-vault/ogc-api-testbed.txt service.yml -i hosts/prod.yml --tags stop
+ansible-playbook -v --vault-password-file ~/.ssh/ansible-vault/ogc-api-jrc.txt service.yml -i hosts/prod.yml --tags stop
 
-ansible-playbook -v --vault-password-file ~/.ssh/ansible-vault/ogc-api-testbed.txt service.yml -i hosts/prod.yml --tags start
+ansible-playbook -v --vault-password-file ~/.ssh/ansible-vault/ogc-api-jrc.txt service.yml -i hosts/prod.yml --tags start
 
 ```
 
@@ -96,8 +91,8 @@ ansible-playbook -v --vault-password-file ~/.ssh/ansible-vault/ogc-api-testbed.t
 Manage the remote Host OS (Ubuntu) system.
 
 ```
-ansible-playbook -v --vault-password-file ~/.ssh/ansible-vault/ogc-api-testbed.txt system.yml -i hosts/prod.yml --tags update_packages
+ansible-playbook -v --vault-password-file ~/.ssh/ansible-vault/ogc-api-jrc.txt system.yml -i hosts/prod.yml --tags update_packages
 
-ansible-playbook -v --vault-password-file ~/.ssh/ansible-vault/ogc-api-testbed.txt system.yml -i hosts/prod.yml --tags reboot
+ansible-playbook -v --vault-password-file ~/.ssh/ansible-vault/ogc-api-jrc.txt system.yml -i hosts/prod.yml --tags reboot
 
 ```

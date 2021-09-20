@@ -17,7 +17,7 @@ export HOST_UID_GID="${HOST_UID}:${HOST_GID}"
 
 # Set host-dependent vars
 case "${HOSTNAME}" in
-    "OGCAPIP")
+    "OGCAPIJRC")
         DEPLOY_ENV="prod"
         ;;
     "jrc.map5.nl")

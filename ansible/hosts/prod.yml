@@ -1,6 +1,6 @@
-ogcapi:
+ogcapijrc:
   hosts:
-    OGCAPIP:
+    OGCAPIJRC:
        ansible_port: 22
        ansible_host: jrc.map5.nl
        ansible_user: root

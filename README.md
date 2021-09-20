@@ -3,7 +3,6 @@
 [![postgis Deploy](https://github.com/justb4/ogc-api-jrc/actions/workflows/deploy.postgis.yml/badge.svg)](https://github.com/justb4/ogc-api-jrc/actions/workflows/deploy.postgis.yml)
 [![admin Deploy](https://github.com/justb4/ogc-api-jrc/actions/workflows/deploy.admin.yml/badge.svg)](https://github.com/justb4/ogc-api-jrc/actions/workflows/deploy.admin.yml)
 [![home Deploy](https://github.com/justb4/ogc-api-jrc/actions/workflows/deploy.home.yml/badge.svg)](https://github.com/justb4/ogc-api-jrc/actions/workflows/deploy.home.yml)
-[![docs Deploy](https://github.com/justb4/ogc-api-jrc/actions/workflows/deploy.docs.yml/badge.svg)](https://github.com/justb4/ogc-api-jrc/actions/workflows/deploy.docs.yml)
 [![Gitter](https://img.shields.io/gitter/room/Geonovum/ogc-api-testbed.svg?style=flat-square)](https://gitter.im/Geonovum/ogc-api-testbed)
 
 # Data Services for EC JRC

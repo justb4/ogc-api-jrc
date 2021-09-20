@@ -1,13 +1,14 @@
 ---
-title: OGC-API-Testbed - STABLE
+title: Data Services by EC JRC
 ---
 
-# OGC-API-Testbed - STABLE - Home
+# Data Services by EC JRC
 
-Landing page for this server instance. 
-Main website and documentation: [apitestdocs.geonovum.nl](https://apitestdocs.geonovum.nl).
- 
-Below the (web-) services running on this domain. Click links to view and interact.
+This site provides access and documentation for data services via mainly [OGC Web Service APIs](https://ogcapi.ogc.org/).
+Provider/developer is the [European Commission Joint Research Centre](https://ec.europa.eu/info/departments/joint-research-centre_en) (EC-JRC, Ispra, Italy).
+
+Below the (web-)services running on this domain. 
+Click links to view and interact.
 
 ## OGC API Features
 
@@ -17,14 +18,7 @@ Open Source products running in this instance. Links to documentation and HOWTOs
 | Endpoint | Author | Docs | HOWTO
 | --- | --- | --- | --- 
 | [/pygeoapi](/pygeoapi) | [GeoPython Community](https://geopython.github.io/) | [docs](https://docs.pygeoapi.io/en/latest/) | [HOWTO](https://apitestdocs.geonovum.nl/howto/howto_pygeoapi/)  
-| [/ldproxy](/ldproxy) | Interactive Instruments | [docs](https://interactive-instruments.github.io/ldproxy/) | [HOWTO](https://apitestdocs.geonovum.nl/howto/howto_ldproxy/)  
-| [/geoserver](/geoserver/ogc/features) | GeoServer Community | [docs](https://docs.geoserver.org/latest/en/user/community/ogc-api/index.html) | [HOWTO](https://apitestdocs.geonovum.nl/howto/howto_geoserver/)  
-| [/qgis*](/qgis/wfs3) | QGIS Community | [docs](https://www.qgis.org/) | [HOWTO](https://apitestdocs.geonovum.nl/howto/howto_qgis/)  
-| [/goaf](/goaf?f=html) | Kadaster PDOK | [docs](https://github.com/PDOK/goaf) | [HOWTO](https://apitestdocs.geonovum.nl/howto/howto_goaf/)  
-| [/pycsw/csw.py](/pycsw/csw.py/collections/metadata:main) | [GeoPython Community](https://geopython.github.io/) | [docs](https://docs.pycsw.org/en/latest/index.html) | [HOWTO](https://apitestdocs.geonovum.nl/howto/howto_pycsw/) 
 
-
-* *"QGIS" is the QGIS Server Application.*
 
 ## Storage Services
 
@@ -34,7 +28,7 @@ The above services serve data from local files (e.g. GeoPackage) and these stora
 
 ## Supporting Services
 
-These are services for administration and maintenance.
+Services for administration and maintenance.
 
 | Endpoint | What | Author | Docs | HOWTO
 | --- | --- | --- | --- | --- 
@@ -42,11 +36,27 @@ These are services for administration and maintenance.
 | [Portainer](/portainer/) | Visual Docker Manager | [portainer.io](https://portainer.io) | [docs](https://documentation.portainer.io) | [HOWTO](https://apitestdocs.geonovum.nl/howto/howto_portainer/)  
 | [GeoHealthCheck](/ghc) | OGC Services Monitor | [GeoPython Community](https://geopython.github.io)  | [docs](https://geohealthcheck.org) | [HOWTO](https://apitestdocs.geonovum.nl/howto/howto_ghc/)  
 
+# Setup
+[The Setup document](setup.md) describes how this server instance has been created.
+
+
+# Author
+
+The main author for this repository and services is [Just van den Broecke](https://github.com/justb4) within 
+an assignment from the European Commission Joint Research Centre (EC-JRC, Ispra, Italy). EC-JRC Contact and project leaders
+[Alexander Kotsev](https://github.com/alexanderkotsev) and [Marco Minghini](https://github.com/MarcoMinghini).
+
+# Credits
+
+This [project's GitHub repository](https://github.com/justb4/ogc-api-jrc) 
+has been created from on the [Geonovum Template Project GitHub Repo](https://github.com/Geonovum/ogc-api-testbed). 
+Background documentation: [apitestdocs.geonovum.nl](https://apitestdocs.geonovum.nl).
+
 # Links
 
-* [Project GitHub Repo](https://github.com/Geonovum/ogc-api-testbed)
-* [apitestdocs.geonovum.nl](https://apitestdocs.geonovum.nl) - all documentation
-
+* [This Project GitHub Repo](https://github.com/justb4/ogc-api-jrc)
+* [Geonovum Template Project GitHub Repo](https://github.com/Geonovum/ogc-api-testbed)
+* [apitestdocs.geonovum.nl](https://apitestdocs.geonovum.nl) - Geonovum - extended documentation
 
 # Questions?
 

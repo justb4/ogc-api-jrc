@@ -1,7 +1,7 @@
 server:
     bind:
-        host: 0.0.0.0
-        port: 80
+      host: 0.0.0.0
+      port: 80
     url: https://jrc.map5.nl/pygeoapi
     mimetype: application/json; charset=UTF-8
     encoding: utf-8
@@ -10,8 +10,8 @@ server:
     pretty_print: true
     limit: 10
     map:
-        url: https://service.pdok.nl/brt/achtergrondkaart/wmts/v2_0/standaard/EPSG:3857/{z}/{x}/{y}.png
-        attribution: 'Map data &copy; <a href="https://pdok.nl">PDOK Kadaster</a>'
+      url: https://service.pdok.nl/brt/achtergrondkaart/wmts/v2_0/standaard/EPSG:3857/{z}/{x}/{y}.png
+      attribution: 'Map data &copy; <a href="https://pdok.nl">PDOK Kadaster</a>'
 #        url: https://maps.wikimedia.org/osm-intl/{z}/{x}/{y}.png
 #        attribution: '<a href="https://wikimediafoundation.org/wiki/Maps_Terms_of_Use">Wikimedia maps</a> | Map data &copy; <a href="https://openstreetmap.org/copyright">OpenStreetMap contributors</a>'
     ogc_schemas_location: /schemas.opengis.net
@@ -22,38 +22,81 @@ logging:
 
 metadata:
     identification:
-        title: GeoNovum OGC API testbed
-        description: An implementation showing use of pygeoapi as INSPICE download service
-        keywords:
-            - geospatial
-            - data
-            - INSPIRE
-            - Download service
-            - api
-        keywords_type: theme
-        terms_of_service: https://creativecommons.org/licenses/by/3.0/
-        url: https://www.nationaalgeoregister.nl/geonetwork/srv/metadata/45eaae76-874a-4fe1-88f4-820517e3de73
+      title: pygeoapi instance at the EC JRC
+      description: An implementation of pygeoapi as data provider
+      keywords:
+        - geospatial
+        - data
+        - INSPIRE
+        - Download service
+        - api
+      keywords_type: theme
+      terms_of_service: https://creativecommons.org/licenses/by/3.0/
+      url: https://ec.europa.eu/info/departments/joint-research-centre_en
     license:
-        name: CC-BY 3.0 license
-        url: http://creativecommons.org/licenses/by/3.0/nl/
+      name: CC-BY 3.0 license
+      url: http://creativecommons.org/licenses/by/3.0/nl/
     provider:
-        name: Rijksdienst Cultureel Erfgoed
-        url: https://www.cultureelerfgoed.nl
+      name: European Commission - Joint research Centre
+      url: https://ec.europa.eu/info/departments/joint-research-centre_en
     contact:
-        name: Rijksdienst voor het Cultureel Erfgoed - InfoDesk
-        position: Helpdesk
-        address: Postbus 1600 
-        city: Amersfoort
-        stateorprovince: Utrecht
-        postalcode: 3800 BP
-        country: The Netherlands
-        phone: +31 633 4217456
-        fax: +31 633 4217799
-        email: info@cultureelerfgoed.nl
-        url: https://www.cultureelerfgoed.nl
-        role: pointOfContact
+      name:  European Commission - Joint research Centre
+      position: Project Leader
+      address: Via E. Fermi 2749
+      city: Ispra
+      stateorprovince: Varese
+      postalcode: 21027
+      country: Italy
+      phone: +31 633 4217456
+      email: tobe@supplied.com
+      url: https://ec.europa.eu/info/departments/joint-research-centre_en
+      role: pointOfContact
 
 resources:
+    ogr_gpkg_addr:
+        type: collection
+        title: Addresses in Helsinki from merging OSM and INSPIRE data through OGR GPKG
+        description: Outcomes of the JRC Pool of experts in data-driven innovation. Uses GeoPackage backend via OGR provider.
+        keywords:
+            - INSPIRE
+            - OSM
+            - Addresses
+            - Open Street Map
+            - NLS
+        links:
+            - type: text/html
+              rel: canonical
+              title: information
+              href: https://www.int-arch-photogramm-remote-sens-spatial-inf-sci.net/XLVI-4-W2-2021/159/2021/
+              hreflang: en-US
+        extents:
+            spatial:
+                bbox: [24.81, 60.04, 25.26, 60.31]
+                crs: http://www.opengis.net/def/crs/OGC/1.3/CRS84
+            temporal:
+                begin:
+                end: null  # or empty
+        providers:
+            - type: feature
+              name: OGR
+              data:
+                  source_type: GPKG
+                  source: data/integratedAddr_Helsinki.gpkg
+                  source_srs: EPSG:3035
+                  target_srs: EPSG:4326
+                  source_capabilities:
+                      paging: True
+
+                  gdal_ogr_options:
+                      EMPTY_AS_NULL: NO
+                      GDAL_CACHEMAX: 64
+                      # GDAL_HTTP_PROXY: (optional proxy)
+                      # GDAL_PROXY_AUTH: (optional auth for remote WFS)
+                      CPL_DEBUG: NO
+
+              id_field: fid
+              layer: integratedAddr_Helsinki
+
     ProtectedSites:
         type: collection
         title: Werelderfgoed
@@ -163,3 +206,45 @@ resources:
 
               id_field: gml_id
               layer: landschapsatlas:Molens
+
+    ogr_addresses_gpkg:
+        type: collection
+        title: Dutch addresses (subset Otterlo). OGR GeoPackage Driver
+        description: Dutch addresses subset.
+        keywords:
+            - Netherlands
+            - addresses
+            - INSPIRE
+        links:
+            - type: text/html
+              rel: canonical
+              title: information
+              href: http://www.nationaalgeoregister.nl/geonetwork/srv/dut/catalog.search#/metadata/4074b3c3-ca85-45ad-bc0d-b5fca8540z0b
+              hreflang: nl-NL
+        extents:
+            spatial:
+                bbox: [50.7539, 7.21097, 53.4658, 3.37087]
+                crs: http://www.opengis.net/def/crs/OGC/1.3/CRS84
+            temporal:
+                begin:
+                end: null  # or empty
+        providers:
+            - type: feature
+              name: OGR
+              data:
+                  source_type: GPKG
+                  source: tests/data/dutch_addresses_4326.gpkg
+                  source_srs: EPSG:4326
+                  target_srs: EPSG:4326
+                  source_capabilities:
+                      paging: True
+
+                  gdal_ogr_options:
+                      EMPTY_AS_NULL: NO
+                      GDAL_CACHEMAX: 64
+                      # GDAL_HTTP_PROXY: (optional proxy)
+                      # GDAL_PROXY_AUTH: (optional auth for remote WFS)
+                      CPL_DEBUG: NO
+
+              id_field: id
+              layer: OGRGeoJSON
