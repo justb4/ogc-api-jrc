@@ -38,7 +38,7 @@
       shell: "cd {{ services_home }}/pygeoapi && ./deploy.sh && docker ps"
       tags: pygeoapi
 
-     - name: "postgis"
+    - name: "postgis"
       shell: "cd {{ services_home }}/postgis && ./deploy.sh && docker ps"
       tags: postgis
 
