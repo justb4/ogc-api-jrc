@@ -1,4 +1,0 @@
-site_name: EC JRC - OGC API Services
-nav:
-    - Home: index.md
-    - Code: https://github.com/justb4/ogc-api-jrc

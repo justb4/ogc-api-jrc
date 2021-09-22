@@ -37,7 +37,7 @@ Services for administration and maintenance.
 | [GeoHealthCheck](/ghc) | OGC Services Monitor | [GeoPython Community](https://geopython.github.io)  | [docs](https://geohealthcheck.org) | [HOWTO](https://apitestdocs.geonovum.nl/howto/howto_ghc/)  
 
 # Setup
-[The Setup document](setup.md) describes how this server instance has been created.
+[The Setup document](chap/setup.md) describes how this server instance has been created.
 
 
 # Author

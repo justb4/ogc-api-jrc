@@ -1,0 +1,23 @@
+site_name: EC JRC - OGC API Services
+site_description: "EC JRC - OGC API Services like Open API Features (via pygeoapi)"
+site_author: EC JRC
+copyright: "&copy; 2021 EC JRC"
+site_url: https://jrc.map5.nl
+repo_url: https://github.com/justb4/ogc-api-jrc
+docs_dir: content
+nav:
+    - Home: index.md
+    - Setup: chap/setup.md
+    - Code: https://github.com/justb4/ogc-api-jrc
+
+# use_directory_urls: true
+
+theme:
+  name: material
+  palette:
+      # See https://squidfunk.github.io/mkdocs-material/setup/changing-the-colors/#color-scheme
+      # Default is indigo (blue)
+      primary: indigo
+
+plugins:
+    - search
