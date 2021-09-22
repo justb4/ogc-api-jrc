@@ -17,7 +17,7 @@ Open Source products running in this instance. Links to documentation and HOWTOs
 
 | Endpoint | Author | Docs | HOWTO
 | --- | --- | --- | --- 
-| [/pygeoapi](/pygeoapi) | [GeoPython Community](https://geopython.github.io/) | [docs](https://docs.pygeoapi.io/en/latest/) | [HOWTO](https://apitestdocs.geonovum.nl/howto/howto_pygeoapi/)  
+| [/pygeoapi](/pygeoapi) | [GeoPython Community](https://geopython.github.io/) | [docs](https://docs.pygeoapi.io/en/latest/) | [HOWTO](chap/howto/pygeoapi.md)  
 
 
 ## Storage Services

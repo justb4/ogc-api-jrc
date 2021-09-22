@@ -8,6 +8,7 @@ docs_dir: content
 nav:
     - Home: index.md
     - Setup: chap/setup.md
+    - Howto: chap/howto/index.md
     - Code: https://github.com/justb4/ogc-api-jrc
 
 # use_directory_urls: true
