@@ -13,7 +13,7 @@ Bootstrap and continuous integration/deployment (CI/CD) for OGC API web-service 
 
 Want to access the (OGC) web-services? Go to:
 
-* Stable (production) server at [jrc.map5.nl](https://jrc.map5.nl/).
+* Stable (production) server at [jrc.map5.nl](https://jrc.map5.nl/), includes documentation.
 
 ## Credits
 This repo is generated from the [Template GitHub repo from Geonovum](https://github.com/Geonovum/ogc-api-testbed) 
@@ -28,18 +28,25 @@ deployment of an OGC API web-service stack using modern "DevOps" tooling.
 
 The main design principles are:
 
-* any action on the server/VM host is performed from a client host
+* any action on the server/VM host is performed remotely from a client host
 * i.e. no direct access/login to/on the server/VM is required, only maybe for problem solving
 * remote actions can be performed manually or triggered by GitHub Workflows
 * all credentials (passwords, SSH-keys, etc) are secured 
-* operational stack instances for "production" (stable) and "sandbox" (playground)
+* operational stack instances for "production" (stable) and "sandbox" ("playground", not implemented here)
 
-The (DevOps-) components used in this setup are:
+This approach is known as [GitOps](https://www.gitops.tech/), a term first coined by [Weaveworks](https://www.weave.works/technologies/gitops/). 
+GitOps is *"a set of practices to manage infrastructure and application configurations using Git"*. 
+"The truth is stored in Git". 
+GitOps is often tied to Kubernetes, but *"...using Kubernetes is not a requirement of GitOps. GitOps is a technique that can be applied to other infrastructure and deployment pipelines."*
+Refs: [Redhat](https://www.redhat.com/en/topics/devops/what-is-gitops).
+
+The (GitOps-) components used in the setup here are:
 
 * [Docker](https://www.docker.com/) *"...OS-level virtualization to deliver software in packages called containers..."* ([Wikipedia](https://en.wikipedia.org/wiki/Docker_(software)))
 * [Docker Compose](https://docs.docker.com/compose) *"...a tool for defining and running multi-container Docker applications..."*
 * [Ansible](https://www.ansible.com/) *"...an open-source software provisioning tool"* ([Wikipedia](https://en.wikipedia.org/wiki/Ansible_(software)))
 * [GitHub Actions/Workflows](https://docs.github.com/en/actions) *"...Automate, customize, and execute software development workflows in a GitHub repository..."*
+
 
 The Docker-components are used to run the operational stack, i.e. the OGC API web-services. 
 Ansible is used to provision both the server OS-software
@@ -67,4 +74,5 @@ For administration, documentation and monitoring the following components are us
 * [GeoHealthCheck](https://geohealthcheck.org) to monitor the availability, compliance and QoS of OGC web services
 * [Portainer](https://www.portainer.io/) visual Docker monitor and manager
 
-Read more on the setup in the [documentation/website of the Geonovum project](https://apitestdocs.geonovum.nl/setup).
+Read more on the setup in the [documentation/website of the Geonovum project](https://apitestdocs.geonovum.nl/setup)
+and for this repo at this repo's server instance at [jrc.map5.nl](https://jrc.map5.nl/).
